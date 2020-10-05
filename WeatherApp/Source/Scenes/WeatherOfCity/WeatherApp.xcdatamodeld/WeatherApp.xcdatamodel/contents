@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F96" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cities" representedClassName="Cities" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DetailWeather" inverseName="mainCity" inverseEntity="DetailWeather"/>
+    </entity>
+    <entity name="DetailWeather" representedClassName="DetailWeather" syncable="YES" codeGenerationType="class">
+        <attribute name="dtTxt" attributeType="String"/>
+        <attribute name="feelsLike" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="mainCity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cities" inverseName="detail" inverseEntity="Cities"/>
+    </entity>
+    <elements>
+        <element name="Cities" positionX="-70.3359375" positionY="-19.93359375" width="128" height="73"/>
+        <element name="DetailWeather" positionX="114.9765625" positionY="-80.9453125" width="128" height="118"/>
+    </elements>
+</model>
